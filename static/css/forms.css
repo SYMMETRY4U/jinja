@@ -29,4 +29,11 @@ form.main-form input[type="submit"]{
 }
 .container300 {
   max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container600 {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
