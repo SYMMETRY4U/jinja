@@ -31,15 +31,61 @@
       <label for="Phone">Phone</label><br>
       <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" required>
     </div>
+    <div>
+      <label for="AddressLine1">Address Line 1</label><br>
+      <input type="text" name="Address_Line1" id="AddressLine1" placeholder="Address Line 1" required>
+    </div>
+    <div>
+      <label for="AddressLine2">Address Line 2</label><br>
+      <input type="text" name="Address_Line2" id="AddressLine2" placeholder="Address Line 2">
+    </div>
+    <div>
+    <div>
+      <label for="City">City</label><br>
+      <input type="text" name="City" id="City" placeholder="City" required>
+    </div>
+    <div>
+      <label for="State">State</label><br>
+      <select name="State" id="State" required>
+        <option value="">Pick a State</option>
+        <option value="AK">Alaska</option>
+        <option value="CA">California</option>
+        <option value="OR">Oregon</option>
+        <option value="WA">Washington</option>
+      </select>
+    </div>
+    <div>
+      <label for="ZipCode">ZIP Code</label><br>
+      <input type="text" name="Zip_Code" id="ZipCode" placeholder="ZIP Code" required pattern="\d{5}(-\d{4})?">
+    </div>
+
+    
 <div>
   <fieldset>
-    <legend> Would You liKE TO JOIN OUR MAILING LIST?</legend>
+    <legend> Would You like To Join Oou MAILING LIST?</legend>
     <label>
       <input type="radio" name="Mailing_List" value="Yes" required > Yes<br>
       <input type="radio" name="Mailing_List" value="No"> No
       </label>
   </fieldset>
 </div>
+
+<div>
+  <fieldset>
+    <legend>Interested In?</legend>
+    <label>
+      <input type="checkbox" name="Interested_In[]" value="Website" > Wedsite<br>
+      <input type="checkbox" name="Interested_In[]" value="Shopping Cart" > Shopping Cart<br>
+      <input type="checkbox" name="Interested_In[]" value="JS Gallery" > JS Gallery<br>
+      <input type="checkbox" name="Interested_In[]" value="Lollipops" > Lollipop<br>
+          
+    </label>
+  </fieldset>
+</div>
+    <div>
+      <label for="Bio">Bio</label><br>
+      <textarea name="Bio id"Bio placeholder="Please enter a short bio" rows="4" cols="60"></textarea>
+    </div>
     
     <div>
       <input type="submit">
