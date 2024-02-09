@@ -1,9 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
 <p>Below are some recipes suggested by our creative staff</p>
-    <ul>
-        {% for recipe in recipes %}
-            <li><a href="{{ url_for('recipe', recipe_id=recipe.id) }}">{{ recipe.name }}</a></li>
-        {% endfor %}
-    </ul>
+
+<table class="w3-table-all w3-hoverable">
+  <tr>
+    <th>Recipe</th>
+    <th>Author</th>
+    <th>Category</th>
+    <th>Icon</th> 
+  </tr>
+  {% for recipe in recipes %}
+  <tr>
+    <td><a href="{{ url_for('recipe', recipe_id=recipe.id) }}">{{ recipe.name }}</a></td>
+    <td>{{ recipe.author }}</td>
+    <td>{{ recipe.category.name }}</td>
+    <td>
+      {% if recipe.category.name == 'Breakfast' %}
+        <i class="fas fa-egg"></i>
+      {% elif recipe.category.name == 'Lunch' %}
+        <i class="fas fa-hamburger"></i>
+      {% elif recipe.category.name == 'Dinner' %}
+        <i class="fas fa-utensils"></i>
+      {% elif recipe.category.name == 'Dessert' %}
+        <i class="fas fa-ice-cream"></i>
+      {% elif recipe.category.name == 'Salad' %}
+        <i class="fas fa-leaf"></i>
+      {% elif recipe.category.name == 'Side Dish' %}
+        <i class="fas fa-pepper-hot"></i>
+      {% else %}
+        <i class="fas fa-question"></i>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
 {% endblock %}

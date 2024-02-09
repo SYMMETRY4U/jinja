@@ -22,3 +22,14 @@ def title_case_fields(data):
               data[key] = data[key].title()
           case _:
               continue
+
+def category_to_icon(category_name):
+  icon_map = {
+      'Breakfast': 'fas fa-egg',
+      'Lunch': 'fas fa-hamburger',
+      'Dinner': 'fas fa-utensils',
+      'Dessert': 'fas fa-ice-cream',
+      'Salad': 'fas fa-leaf',
+      'Side Dish': 'fas fa-pepper-hot',
+  }
+  return icon_map.get(category_name, 'fas fa-question')  # Default icon

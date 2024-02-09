@@ -37,3 +37,20 @@ form.main-form input[type="submit"]{
   margin-left: auto;
   margin-right: auto;
 }
+
+#wrapper {
+  max-width:1200px;
+  margin:20px auto;
+  clear:both;
+    background-color: white;
+    overflow: auto;
+}
+
+.w3-container p {
+  text-align: left;
+  
+}
+.div-center {
+    text-align: center;
+}
+
