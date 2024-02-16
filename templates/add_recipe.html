@@ -1,0 +1,45 @@
+<!-- templates/add_recipe.html -->
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Add Recipe</h1>
+<form method="post" action="{{ url_for('add_recipe') }}" class="main-form">
+    {{ form.hidden_tag() }}
+    <div>
+        <label for="name">{{ form.name.label.text }}</label><br>
+        <input type="text" name="name" id="name" value="{{ form.name.data or '' }}">
+    </div>
+    <div>
+        <label for="author">{{ form.author.label.text }}</label><br>
+        <input type="text" name="author" id="author" value="{{ form.author.data or '' }}">
+    </div>
+    <div>
+        <label for="description">{{ form.description.label.text }}</label><br>
+        <textarea name="description" id="description" rows="4" cols="60">{{ form.description.data or '' }}</textarea>
+    </div>
+    <div>
+        <label for="ingredients">{{ form.ingredients.label.text }}</label><br>
+        <textarea name="ingredients" id="ingredients" rows="4" cols="60">{{ form.ingredients.data or '' }}</textarea>
+    </div>
+    <div>
+        <label for="instructions">{{ form.instructions.label.text }}</label><br>
+        <textarea name="instructions" id="instructions" rows="4" cols="60">{{ form.instructions.data or '' }}</textarea>
+    </div>
+    <div>
+        <label for="rating">{{ form.rating.label.text }}</label><br>
+        
+        <input type="text" name="rating" id="rating" value="{{ form.rating.data or '' }}">
+    </div>
+    <div>
+        <label for="category_id">{{ form.category_id.label.text }}</label><br>
+        <select name="category_id" id="category_id">
+            {% for category in form.category_id.choices %}
+                <option value="{{ category[0] }}" {% if form.category_id.data == category[0] %} selected {% endif %}>{{ category[1] }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <button type="submit">Add Recipe</button>
+    </div>
+</form>
+
+{% endblock %}

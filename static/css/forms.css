@@ -47,10 +47,33 @@ form.main-form input[type="submit"]{
 }
 
 .w3-container p {
-  text-align: left;
-  
+  text-align: left;  
 }
+.w3-container footer {
+  text-align: left;  
+} 
 .div-center {
     text-align: center;
 }
+/* colors for flash messages */
+.error{
+  background-color:red;
+}
 
+.success{
+  background-color:blue;
+  }
+.success p, .success h3 {
+  color: white;
+}
+
+.warning{
+  background-color:yellow;
+}
+
+footer button, 
+footer input[type="button"], 
+footer input[type="submit"] 
+ {
+  color: red;
+}

@@ -1,0 +1,46 @@
+<!--templates/edit_recipe.html -->
+{% extends "base.html" %}
+{% block content %}
+
+{% if form %}
+<form method="POST" action="" class="main-form">
+  {{ form.hidden_tag() }}
+
+  <div>
+    {{ form.name.label(for="name") }}<br>
+    {{ form.name(id="name", class_="input", size=32, placeholder="Recipe Name") }}
+  </div>
+
+  <div>
+    {{ form.description.label(for="description") }}<br>
+    {{ form.description(id="description", class_="textarea", rows=4, cols=32, placeholder="Recipe Description") }}
+  </div>
+
+  <div>
+    {{ form.ingredients.label(for="ingredients") }}<br>
+    {{ form.ingredients(id="ingredients", class_="textarea", rows=4, cols=32, placeholder="Ingredients") }}
+  </div>
+
+  <div>
+    {{ form.instructions.label(for="instructions") }}<br>
+    {{ form.instructions(id="instructions", class_="textarea", rows=4, cols=32, placeholder="Instructions") }}
+  </div>
+
+  <div>
+    {{ form.category_id.label(for="category_id") }}<br>
+    {{ form.category_id(id="category_id", class_="select") }}
+  </div>
+
+  <div>
+    {{ form.rating.label(for="rating") }}<br>
+    {{ form.rating(id="rating", class_="input") }}
+  </div>
+
+  <div>
+    <input type="submit" value="Update Recipe" class="button">
+  </div>
+</form>
+{% endif %}
+
+{% endblock %}
+
