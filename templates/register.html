@@ -14,8 +14,9 @@
 <p>The following is a demonstration of a form that can be filled out and when data is entered, the data is submitted back to the same page so the data can be seen on the page.</p>
 <p>Any form fields that have names with an underscore between significant words, such as <b>First_Name</b> 
       will be split into separate words, for example <b>First Name</b> upon submission.</p>  
+
   <form method="POST" action="" class="main-form">
-    <div>
+     <div>
       <label for="FirstName">First Name</label><br>
       <input type="text" name="First_Name" id="FirstName" placeholder="First Name" required autofocus>
     </div>
@@ -88,9 +89,11 @@
     </div>
     
     <div>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
       <input type="submit">
     </div>
   </form>
+
 {% endif %}
 
 {% endblock %}
