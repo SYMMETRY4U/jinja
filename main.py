@@ -38,7 +38,6 @@ db.init_app(app)
 UPLOAD_FOLDER = 'static/recipe_pics'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
 #setup login
 login_manager = LoginManager()
 login_manager.login_view = 'login'
@@ -94,8 +93,8 @@ def sign_up():
     form = RegistrationForm()
     if form.validate_on_submit():
         chef= Chef(first_name=form.first_name.data,
-                     last_name=form.last_name.data,
-                     email=form.email.data)
+        last_name=form.last_name.data,
+        email=form.email.data)
         chef.set_password(form.password.data)
         db.session.add(chef)
         db.session.commit()
@@ -112,11 +111,6 @@ def sign_up():
         "form": form
     }
     return render_template('sign_up.html', **context)
-
-
-
-
-
 
 #DELETE
 @app.route('/delete_recipe/<int:id>', methods=['POST'])

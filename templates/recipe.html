@@ -27,10 +27,13 @@
      
         {% if current_user.is_authenticated %}
           <p><a href="/edit_recipe/{{recipe.id}}">Edit</a></p>
-          <form action="/delete_recipe/{{recipe.id}}") method="post" onsubmit="return confirm('Are you sure you want to delete this recipe?');">
+          <p><a href="/recipe_pic/{{recipe.id}}">Upload Picture</a></p>
+        <p><a href="/recipes">Back to Recipes</a></p>
+
+      <form action="/delete_recipe/{{recipe.id}}") method="post" onsubmit="return confirm('Are you sure you want to delete this recipe?');">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <button type="submit" class="btn btn-danger">Delete</button>
-<p><a href="/recipes">Back to Recipes</a></p>
+
             
           </form>
         {% endif %}
