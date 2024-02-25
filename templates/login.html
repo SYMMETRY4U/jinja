@@ -1,0 +1,23 @@
+<!-- templates/login.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="login">
+    <h3>Chef Login</h3>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            <div>{{ form.email.label }}:</div>
+            <div>{{ form.email }}</div>
+        </div>
+        <br>
+        <div>
+            <div>{{ form.password.label }}:</div> 
+            <div>{{ form.password }} </div>
+        </div>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+{% endblock %}
+
+
